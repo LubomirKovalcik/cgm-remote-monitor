@@ -38,7 +38,7 @@ function config ( ) {
   setVersion();
   setStorage();
   updateSettings();
-
+   env.insecureUseHttp = readENVTruthy("INSECURE_USE_HTTP", true);
   return env;
 }
 
