@@ -33,7 +33,7 @@ function config ( ) {
     delete env.err;
   }
 
-  setSSL();
+
   setAPISecret();
   setVersion();
   setStorage();
@@ -56,7 +56,7 @@ function setSSL() {
     }
   }
 
-  env.insecureUseHttp = readENVTruthy("INSECURE_USE_HTTP", false);
+  env.insecureUseHttp = readENVTruthy("INSECURE_USE_HTTP", true);
   env.secureHstsHeader = readENVTruthy("SECURE_HSTS_HEADER", true);
   env.secureHstsHeaderIncludeSubdomains = readENVTruthy("SECURE_HSTS_HEADER_INCLUDESUBDOMAINS", false);
   env.secureHstsHeaderPreload= readENVTruthy("SECURE_HSTS_HEADER_PRELOAD", false);
