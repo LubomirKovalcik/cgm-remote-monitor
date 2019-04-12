@@ -37,11 +37,8 @@ var PORT = env.PORT;
 var HOSTNAME = env.HOSTNAME;
 
 function create (app) {
-  var transport = (env.ssl
-                ? require('https') : require('http'));
-  if (env.ssl) {
-    return transport.createServer(env.ssl, app);
-  }
+  var transport =  require('http');
+  
   return transport.createServer(app);
 }
 
